@@ -8,13 +8,13 @@ class Quiz extends StatelessWidget {
   final int questionId;
   final String questionText;
   final Function answerQuestion;
-  final List answers;
+  //final List answers;
 
   Quiz({
     required this.questionId,
     required this.questionText,
     required this.answerQuestion,
-    required this.answers,
+    //required this.answers,
   });
 
 
@@ -22,10 +22,11 @@ class Quiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Question(id: questionId, text: questionText),
         ...(questions[questionId]['answer'] as List<Map<String, Object>>).map((answer) {
-        return Answer(text: answer['text'] as String, answerHandler: () => answerQuestion(answer['score'] as String));
+        return Answer(answer['text'] as String, () => answerQuestion(answer['score']));
       }).toList(),
 
     

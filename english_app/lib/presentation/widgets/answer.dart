@@ -4,26 +4,30 @@ class Answer extends StatelessWidget {
   final String text;
   final Function answerHandler;
 
-  Answer({
-    required this.text,
-    required this.answerHandler,
-  });
+  Answer(
+    this.text,
+    this.answerHandler,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 30,
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+      width: double.infinity,
+      height: 50,
       decoration: BoxDecoration(
-        color: Colors.blueGrey[200],
+        color: Colors.blue,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Text(
-        text,
-        style: TextStyle(
-          color: Colors.blue[900],
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
+      child: ElevatedButton(
+        onPressed: () => answerHandler(),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );

@@ -1,3 +1,5 @@
+import 'package:english_app/presentation/pages/resultPage.dart';
+
 import '../widgets/quiz.dart';
 import 'package:flutter/material.dart';
 import '../../data/questions.dart';
@@ -8,14 +10,12 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  var _questionId = 0;
+  var _questionIndex = 0;
+  var totalScore = 0;
 
-/*   void setState(){
-
-  }  */
-
-  void answerQuestion(){
-    print("Choose variant");
+  void answerQuestion(int score) {
+    setState(() => _questionIndex++);
+    totalScore += score;
   }
 
   @override
@@ -25,12 +25,15 @@ class _TestState extends State<Test> {
         title: Text("Test"),
       ),
       body: Center(
-        child: Quiz(
-          questionId: _questionId,
-          questionText: (questions[_questionId]['questionText']) as String,
-          answerQuestion: answerQuestion,
-          answers: [],
-        ),
+        child: _questionIndex != questions.length
+            ? Quiz(
+                questionId: _questionIndex,
+                questionText:
+                    (questions[_questionIndex]['questionText']) as String,
+                answerQuestion: answerQuestion,
+                //answers: [],
+              )
+            : Result(totalScore),
       ),
     );
   }

@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 80,
+                height: 60,
               ),
               Text(
                 'English App',
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 170,
+                height: 150,
               ),
             ],
           ),

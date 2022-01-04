@@ -11,12 +11,15 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: Colors.blue[900],
-        fontSize: 10,
-        fontWeight: FontWeight.w600,
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: Colors.blue[900],
+          fontSize: 40,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }
