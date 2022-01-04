@@ -9,7 +9,7 @@ class _ApplicationState extends State<Application> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       theme: ThemeData(
+        theme: ThemeData(
         accentColor: Colors.indigo,
       ),
       home: Scaffold(

@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'testPage.dart';
 
 class HomePage extends StatelessWidget {
+  void navigate(BuildContext ctx) {
+    print('Clicked *Test* button');
+    Navigator.of(ctx).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return Test();
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -26,17 +36,20 @@ class HomePage extends StatelessWidget {
               Text(
                 'English App',
                 style: TextStyle(
-                  fontSize: 35,
+                  fontSize: 45,
                   color: Colors.orange,
                   fontWeight: FontWeight.bold,
                 ),
+              ),
+              SizedBox(
+                height: 40,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     fixedSize: const Size(200, 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30))),
-                onPressed: () => print('Clicked *Test* button'),
+                onPressed: () => navigate(context),
                 child: Text(
                   'Test',
                   style: TextStyle(
@@ -62,7 +75,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 200,
+                height: 170,
               ),
             ],
           ),
