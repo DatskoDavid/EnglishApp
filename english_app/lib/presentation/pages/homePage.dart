@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'testPage.dart';
+import 'testMode/testPage.dart';
+import 'inputWordMode/inputWordPage.dart';
 
 class HomePage extends StatelessWidget {
-  void navigate(BuildContext ctx) {
+  void navigate(BuildContext ctx, Widget widget) {
     print('Clicked *Test* button');
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return Test();
+          return widget;
     }));
   }
 
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
                     fixedSize: const Size(200, 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30))),
-                onPressed: () => navigate(context),
+                onPressed: () => navigate(context, Test()),
                 child: Text(
                   'Test',
                   style: TextStyle(
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
                     fixedSize: const Size(200, 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30))),
-                onPressed: () => print('Clicked *Input word* button'),
+                onPressed: () => navigate(context, InputWord()),
                 child: Text(
                   'Input word',
                   style: TextStyle(

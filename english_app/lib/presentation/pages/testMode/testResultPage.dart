@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/questions.dart';
+//import '../../../data/questions.dart';
 
 class Result extends StatelessWidget {
   final int totalScore;
@@ -13,25 +13,15 @@ class Result extends StatelessWidget {
   String createResultMessage(int score) {
     String message;
 
-    switch (score) {
-      case 3:
-        message = "Very good";
-        messageColor = Colors.green;
-        break;
-      case 2:
-        message = "Not bad, but u have some work";
-        messageColor = Colors.grey;
-        break;
-      case 1:
-        message = "STUDY ENGLISH !!!";
-        messageColor = Colors.redAccent;
-        break;
-      case 0:
-        message = "STUDY ENGLISH !!!";
-        messageColor = Colors.redAccent;
-        break;
-      default:
-        message = "";
+    if ((score <= 10) && (score >= 8)) {
+      message = "Very good";
+      messageColor = Colors.green;
+    } else if ((score <= 7) && (score >= 4)) {
+      message = "Not bad, but u have some work";
+      messageColor = Colors.grey;
+    } else {
+      message = "STUDY ENGLISH !!!";
+      messageColor = Colors.redAccent;
     }
 
     return message;
@@ -40,7 +30,7 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
+        child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
@@ -68,3 +58,25 @@ class Result extends StatelessWidget {
     ));
   }
 }
+
+
+/* switch (score) {
+      case (score <=10) && (score <=8) :
+        message = "Very good";
+        messageColor = Colors.green;
+        break;
+      case 2:
+        message = "Not bad, but u have some work";
+        messageColor = Colors.grey;
+        break;
+      case 1 | 0:
+        message = "STUDY ENGLISH !!!";
+        messageColor = Colors.redAccent;
+        break;
+     /*  case 0:
+        message = "STUDY ENGLISH !!!";
+        messageColor = Colors.redAccent;
+        break; */
+      default:
+        message = "";
+    } */

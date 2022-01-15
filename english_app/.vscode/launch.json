@@ -7,7 +7,8 @@
         {
             "name": "english_app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "lib/presentation/main.dart"
         },
         {
             "name": "english_app (profile mode)",

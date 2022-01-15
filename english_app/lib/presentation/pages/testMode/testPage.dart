@@ -1,8 +1,8 @@
-import 'package:english_app/presentation/pages/resultPage.dart';
+import 'package:english_app/presentation/pages/testMode/testResultPage.dart';
 
-import '../widgets/quiz.dart';
+import '../../widgets/quiz.dart';
 import 'package:flutter/material.dart';
-import '../../data/questions.dart';
+import '../../../data/questions.dart';
 
 class Test extends StatefulWidget {
   @override
