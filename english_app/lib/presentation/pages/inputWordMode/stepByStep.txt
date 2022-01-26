@@ -1,0 +1,49 @@
+RESULT
+
+2 way
+
+1 - Right answer 
+show entered answer by green color
+
+2 - Incorrect answer
+ - show enterd answer by red color
+ - show right answer by green color
+
+
+1 STEP
+
+TO DO 
+Wrap necessary widgets with visibility
+
+-------------------
+Form visible
+Result invisible
+
+****************************************
+
+2 STEP - User input word and click button
+
+TO DO 
+Add ternar operators (resultText, resultColor, word)
+Add bool function - verifyWord that have setState inside
+
+-------------------------
+Form
+definition - visible
+inputForm - invisible
+button - invisible
+
+Result 
+user input - visible if not right answer 
+right word - always visible
+resultText - visible
+button - visible
+
+****************************
+
+3 STEP - User click next
+
+Return to 1 STEP
+
+
+

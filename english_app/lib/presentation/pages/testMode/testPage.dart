@@ -25,15 +25,18 @@ class _TestState extends State<Test> {
         title: Text("Test"),
       ),
       body: Center(
-        child: _questionIndex != questions.length
-            ? Quiz(
-                questionId: _questionIndex,
-                questionText:
-                    (questions[_questionIndex]['questionText']) as String,
-                answerQuestion: answerQuestion,
-                //answers: [],
-              )
-            : Result(totalScore),
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+          child: _questionIndex != questions.length
+              ? Quiz(
+                  questionId: _questionIndex,
+                  questionText:
+                      (questions[_questionIndex]['questionText']) as String,
+                  answerQuestion: answerQuestion,
+                  //answers: [],
+                )
+              : Result(totalScore),
+        ),
       ),
     );
   }

@@ -15,9 +15,10 @@ class Question extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.blue[900],
-          fontSize: 40,
+          fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
       ),

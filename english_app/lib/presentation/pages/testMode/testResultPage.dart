@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-//import '../../../data/questions.dart';
+import '../../../data/questions.dart';
 
 class Result extends StatelessWidget {
   final int totalScore;
   Color messageColor = Colors.indigo;
-  //final int questionQuantity;
 
   Result(
     this.totalScore,
@@ -13,12 +12,12 @@ class Result extends StatelessWidget {
   String createResultMessage(int score) {
     String message;
 
-    if ((score <= 10) && (score >= 8)) {
+    if ((score <= questions.length) && (score >= (questions.length/100*75))) {
       message = "Very good";
       messageColor = Colors.green;
-    } else if ((score <= 7) && (score >= 4)) {
+    } else if ((score >= (questions.length/100*40))) {
       message = "Not bad, but u have some work";
-      messageColor = Colors.grey;
+      messageColor = Colors.yellow;
     } else {
       message = "STUDY ENGLISH !!!";
       messageColor = Colors.redAccent;
@@ -35,11 +34,11 @@ class Result extends StatelessWidget {
       children: [
         Text(
           "You answered right on $totalScore questions",
+          textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: "Raleway-Regular.ttf",
             fontSize: 25,
             color: Colors.teal,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
         SizedBox(
@@ -48,10 +47,9 @@ class Result extends StatelessWidget {
         Text(
           createResultMessage(totalScore),
           style: TextStyle(
-            fontFamily: "Raleway-Regular.ttf",
             fontSize: 25,
             color: messageColor,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ],

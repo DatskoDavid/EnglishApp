@@ -4,7 +4,6 @@ import 'inputWordMode/inputWordPage.dart';
 
 class HomePage extends StatelessWidget {
   void navigate(BuildContext ctx, Widget widget) {
-    print('Clicked *Test* button');
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
